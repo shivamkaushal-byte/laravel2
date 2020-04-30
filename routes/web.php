@@ -11,12 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', 'WelcomeController@index')->name('welcome');
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('categories','CategoriesController');
 Route::resource('post','PostController');
@@ -28,3 +24,4 @@ Route::post('User/{user}/makeadmin','UserController@make')->name('makeadmin');
 Route::get('User/profile', 'UserController@edit')->name('user.edit-profile');
 Route::put('User/profile','UserController@update')->name('user.update');
 //});
+Route::get('blog/post/{post}','blogpostController@show')->name('blog.show');

@@ -11,7 +11,7 @@ class post extends Model
 //  use SoftDeletes;
 
   public $timestamps = false;
-  protected $fillable = ['title','description','content','published_at','category_id','image'];
+  protected $fillable = ['title','description','content','published_at','category_id','image','user_id'];
     //
 
   public function category(){
@@ -24,5 +24,9 @@ class post extends Model
 
   public function hasTag($tagsid){
     return in_array('$tagsid', $this->tag->pluck('id')->toArray());
+  }
+  public function user(){
+    return $this->belongsTo(User::class);
+
   }
 }

@@ -58,6 +58,7 @@ class PostController extends Controller
         'content' => $request->content,
         'published_at' => $request->published_at,
         'image'=> $image,
+        'user_id' => auth()->user()->id,
         'category_id' => $request->category
           ]);
         if($post->tag){
@@ -113,6 +114,7 @@ class PostController extends Controller
       $post->published_at = $request->published_at;
       $post->image = $request->image->Store('post');
       $post->category_id = $request->category;
+      $post->user_id = $request->user_id;
       $post->tag()->attach($request->tag);
       $post->save();
       return redirect(route('post.index'));

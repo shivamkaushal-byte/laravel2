@@ -29,14 +29,15 @@
            <tr>
 
              <td>
-            <img src="{{ $posts->image }}" width="60px" height="60px">
+            <img src="{{ asset('storage/'.$posts->image) }}" width="60px" height="60px">
             </td>
             <td>
               <a href="{{ route('categories.edit',$posts->category->id) }}">
                   {{ $posts->category->name }}
             </a>
           </td>
-              {{ $posts->title }}
+            <td>
+              {{$posts->title }}
             </td>
             <td>
            <a href="{{ route('post.show',$posts->id) }}" class="btn btn-primary">View</a>
