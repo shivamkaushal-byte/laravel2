@@ -1,7 +1,7 @@
 @extends('layouts.blog')
 
 @section('title')
- News Blog
+ category{{$category->name}}
 @endsection
 
 @section('header')
@@ -12,8 +12,9 @@
     <div class="row">
       <div class="col-md-8 mx-auto">
 
-        <h1>News</h1>
-        <p class="lead-2 opacity-90 mt-6">Read and get the updated news</p>
+        <h1>
+           {{$category->name}}
+        </h1>
 
       </div>
     </div>
@@ -27,7 +28,7 @@
 @section('content')
 
 <main class="main-content">
-  <div class="section bg-grey">
+  <div class="section bg-gray">
     <div class="container">
       <div class="row">
 
@@ -71,7 +72,7 @@
           <div class="sidebar px-4 py-md-0">
 
             <h6 class="sidebar-title">Search</h6>
-            <form class="input-group" action="{{route('welcome')}}" method="GET">
+            <form class="input-group" action="{{route('blog.category',$category->id)}}" method="GET">
               <input type="text" class="form-control" name="search" placeholder="Search" value="{{request()->query('search')}}">
               <div class="input-group-addon">
                 <span class="input-group-text"><i class="ti-search"></i></span>
@@ -116,15 +117,7 @@
 
             <hr>
 
-            <h6 class="sidebar-title">Tags</h6>
-            <div class="gap-multiline-items-1">
-              @foreach( $tags as $tag )
-              <a class="badge badge-secondary" href="{{route('blog.tag',$tag->id)}}">
-                  {{ $tag->name }}
-                </a>
-                @endforeach
 
-            </div>
 
             <hr>
 

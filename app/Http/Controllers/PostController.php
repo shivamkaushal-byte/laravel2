@@ -12,7 +12,7 @@ use App\tag;
 
 use App\Http\Middleware\VerifyCategoryCount;
 
-use Illuminate\Support\Facades\storage;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -116,6 +116,7 @@ class PostController extends Controller
       $post->category_id = $request->category;
       $post->user_id = $request->user_id;
       $post->tag()->attach($request->tag);
+      $post->user_id = auth()->user()->id;
       $post->save();
       return redirect(route('post.index'));
         //

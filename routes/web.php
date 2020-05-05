@@ -25,3 +25,5 @@ Route::get('User/profile', 'UserController@edit')->name('user.edit-profile');
 Route::put('User/profile','UserController@update')->name('user.update');
 //});
 Route::get('blog/post/{post}','blogpostController@show')->name('blog.show');
+Route::get('blog/category/{category}','blogpostController@category')->name('blog.category');
+Route::get('blog/tag/{tag}','blogpostController@tag')->name('blog.tag');
