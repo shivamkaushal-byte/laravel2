@@ -1,7 +1,7 @@
 @extends('layouts.blog')
 
 @section('title')
- News Blog
+News Blog
 @endsection
 
 @section('header')
@@ -27,7 +27,7 @@
 @section('content')
 
 <main class="main-content">
-  <div class="section bg-grey">
+  <div class="section">
     <div class="container">
       <div class="row">
 
@@ -38,16 +38,16 @@
 
             <div class="col-md-6">
               <div class="card border hover-shadow-6 mb-6 d-block">
-                <a href="{{ route('blog.show',$post->id) }}"><img class="card-img-top" src="{{asset('storage/'.$post->image )}}"  alt="Card image cap"></a>
-                <div class="p-6 text-center">
+                <a href="{{ route('blog.show',$post->id) }}"><img class="card-img-top" src="{{asset('storage/'.$post->image )}}" alt="Card image cap"></a>
+                <div class="p-6 text-center   bg-gray">
                   <p><a class="small-5 text-dark text-uppercase ls-2 fw-400" href="#">
                       {{ $post->category->name }}
-                  </a>
-                </p>
+                    </a>
+                  </p>
                   <h5 class="mb-0"><a class="text-dark" href="{{route('blog.show', $post->id) }}">
-                    {{ $post->title }}
-                  </a>
-                </h5>
+                      {{ $post->title }}
+                    </a>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -79,18 +79,21 @@
             </form>
 
             <hr>
+            <div class="bg_gray">
 
-            <h6 class="sidebar-title">Categories</h6>
-            <div class="row link-color-default fs-14 lh-24">
-              @foreach( $categories as $category)
-              <div class="col-6">
-                <a href="{{route('blog.category',$category->id)}}">
-                  {{ $category->name }}
-                </a>
+              <h6 class="sidebar-title">Categories</h6>
+              <div class=" link-color-default fs-14 lh-24">
+                <ul>
+                  @foreach( $categories as $category)
+                  <li class="cat-item cat-item-4">
+                    <a href="{{route('blog.category',$category->id)}}">
+                      {{ $category->name }}
+                    </a>
+                  </li>
+                  @endforeach
+                </ul>
               </div>
-                @endforeach
             </div>
-
             <hr>
 
             <!-- <h6 class="sidebar-title">Top posts</h6>
@@ -120,9 +123,9 @@
             <div class="gap-multiline-items-1">
               @foreach( $tags as $tag )
               <a class="badge badge-secondary" href="{{route('blog.tag',$tag->id)}}">
-                  {{ $tag->name }}
-                </a>
-                @endforeach
+                {{ $tag->name }}
+              </a>
+              @endforeach
 
             </div>
 
