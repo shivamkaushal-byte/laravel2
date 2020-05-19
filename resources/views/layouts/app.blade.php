@@ -125,5 +125,11 @@
       @endauth
         </main>
     </div>
+    <div>
+    <footer class="footer">
+      <div class="container">
+        <div class="row gap-y align-items-center">
+        <div class="col-6 col-lg-9 text-left order-lg-last">
+        </div>
 </body>
 </html>

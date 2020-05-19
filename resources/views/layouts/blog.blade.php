@@ -310,7 +310,9 @@
     <footer class="footer">
       <div class="container">
         <div class="row gap-y align-items-center">
-
+        <div class="col-6 col-lg-9 text-left order-lg-last">
+          @copyright
+        </div>
 
           <div class="col-6 col-lg-3 text-right order-lg-last">
             <div class="social">
