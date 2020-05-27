@@ -146,7 +146,17 @@ class PostController extends Controller
     //   $trashed =  post::WithTrashed()->get();
     //   return redirect(route{'post.index'})->with('post',$trashed);
     // }
-}
+
+
+    public function getdata(){
+      $post = post::all();
+      return response()->json(post::get(),200);
+        }
+    public function createdata(){
+      $post = post::create($request->all());
+      return response()->json($post,201);
+    }
+  }//5b6333e02d7f41afa267fc69f2487c72
 //   $category = category::with('post')->get();
 //   $title = $data->title;
 //   $categories = $category->all();

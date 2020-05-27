@@ -10,7 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/newss', 'ApiController@displayNews');
+Route::post('/sourceId', 'ApiController@displayNews');
 Route::get('/', 'WelcomeController@index')->name('welcome');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

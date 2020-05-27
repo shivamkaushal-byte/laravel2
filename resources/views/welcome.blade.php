@@ -27,6 +27,7 @@ News Blog
 @section('content')
 
 <main class="main-content">
+
   <div class="section">
     <div class="container">
       <div class="row">
@@ -93,7 +94,7 @@ News Blog
                   @endforeach
                 </ul>
               </div>
-            </div>
+
             <hr>
 
             <!-- <h6 class="sidebar-title">Top posts</h6>
@@ -128,9 +129,10 @@ News Blog
               @endforeach
 
             </div>
-
             <hr>
-
+            <div class="link-color-default fs-14 lh-24">
+                 <a href="/newss" class="btn btn-primary">Live News</a>
+          </div>
             <!-- <h6 class="sidebar-title">About</h6>
             <p class="small-3">TheSaaS is a responsive, professional, and multipurpose SaaS, Software, Startup and WebApp landing template powered by Bootstrap 4. TheSaaS is a powerful and super flexible tool for any kind of landing pages.</p>
 -->
